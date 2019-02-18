@@ -1,0 +1,11 @@
+import pymorphy2
+
+text = open('nachalo.txt', 'r')
+f = open('itog.txt', 'w')
+abc = text.read()
+text_split = abc.split(' ')
+morph = pymorphy2.MorphAnalyzer()
+
+for a in text_split:
+    parsed = morph.parse(a)[0]
+    f.write(str(parsed))
