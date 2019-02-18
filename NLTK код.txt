@@ -1,0 +1,9 @@
+import nltk
+from nltk.tokenize import word_tokenize
+nltk.download('averaged_perceptron_tagger')
+f = open('itog.txt', 'w')
+text = open('nachalo.txt', 'r')
+abc = text.read()
+text = word_tokenize(abc)
+final = nltk.pos_tag(text)
+f.write(str(final))
